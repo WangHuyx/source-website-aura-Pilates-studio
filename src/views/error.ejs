@@ -1,0 +1,10 @@
+<%- include('partials/header', { title, user: null }) %>
+
+<div class="empty-state">
+  <p class="eyebrow">Error</p>
+  <h1>Something went wrong.</h1>
+  <p><%= message %></p>
+  <a class="btn btn-primary" href="/">Back to start</a>
+</div>
+
+<%- include('partials/footer') %>

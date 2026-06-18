@@ -1,0 +1,21 @@
+<%- include('partials/header', { title, user }) %>
+
+<div class="page-head">
+  <p class="eyebrow">My bookings</p>
+  <h1>Your <em>reserved</em> classes</h1>
+</div>
+
+<% if (myClasses.length === 0) { %>
+  <div class="empty-state">
+    <p>You haven't booked a class yet.</p>
+    <a class="btn btn-primary" href="/classes">Browse the schedule</a>
+  </div>
+<% } else { %>
+  <div class="class-grid">
+    <% myClasses.forEach(function (classItem) { %>
+      <%- include('partials/class-card', { classItem, user, showRegister: false }) %>
+    <% }); %>
+  </div>
+<% } %>
+
+<%- include('partials/footer') %>

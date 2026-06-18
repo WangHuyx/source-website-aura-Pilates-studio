@@ -1,0 +1,31 @@
+<%- include('partials/header', { title, user }) %>
+
+<div class="page-head">
+  <p class="eyebrow">Dashboard</p>
+  <h1>Welcome back, <em><%= user.fullName %></em></h1>
+  <p class="lede">Pick up where you left off.</p>
+</div>
+
+<div class="quick-links">
+  <a class="quick-card" href="/classes">
+    <span class="quick-card-label">Browse schedule</span>
+    <span class="quick-card-desc"><%= classes.length %> classes running this week</span>
+  </a>
+  <a class="quick-card" href="/my-bookings">
+    <span class="quick-card-label">My bookings</span>
+    <span class="quick-card-desc">Review what you've reserved</span>
+  </a>
+</div>
+
+<h2 class="section-title">This week's rail</h2>
+<div class="schedule-strip">
+  <% classes.forEach(function (c) { %>
+    <div class="strip-row">
+      <span class="strip-time"><%= c.day %> · <%= c.time %></span>
+      <span class="strip-name"><%= c.name %></span>
+      <span class="strip-instructor"><%= c.instructor %></span>
+    </div>
+  <% }); %>
+</div>
+
+<%- include('partials/footer') %>

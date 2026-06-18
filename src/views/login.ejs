@@ -1,0 +1,31 @@
+<%- include('partials/header', { title, user: null }) %>
+
+<div class="auth-shell">
+  <div class="auth-side">
+    <p class="eyebrow">Aura Pilates Studio</p>
+    <h1><em>Move with</em><br />intention.</h1>
+    <p class="lede">Sign in to reserve your next reformer or mat session.</p>
+  </div>
+
+  <div class="auth-card">
+    <h2>Sign in</h2>
+
+    <% if (error) { %>
+      <div class="alert alert-error"><%= error %></div>
+    <% } %>
+
+    <form method="POST" action="/login" class="form" novalidate>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" autocomplete="username" required autofocus />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" autocomplete="current-password" required />
+
+      <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+    </form>
+
+    <p class="hint">Demo account — username <code>admin</code>, password <code>Pilates@123</code></p>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

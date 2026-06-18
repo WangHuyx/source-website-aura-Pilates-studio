@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %> · Aura Pilates Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">Aura <em>Pilates</em> Studio</a>
+      <nav class="nav">
+        <% if (typeof user !== 'undefined' && user) { %>
+          <a href="/dashboard">Dashboard</a>
+          <a href="/classes">Schedule</a>
+          <a href="/my-bookings">My bookings</a>
+          <a href="/logout" class="nav-logout">Log out</a>
+        <% } else { %>
+          <a href="/login">Log in</a>
+        <% } %>
+      </nav>
+    </div>
+  </header>
+  <main class="container main-content">

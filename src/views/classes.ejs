@@ -1,0 +1,19 @@
+<%- include('partials/header', { title, user }) %>
+
+<div class="page-head">
+  <p class="eyebrow">Class schedule</p>
+  <h1><em>Find your next</em> session</h1>
+  <p class="lede">Reserve a spot below — capacity updates the moment you book.</p>
+</div>
+
+<% if (message) { %>
+  <div class="alert alert-info"><%= message %></div>
+<% } %>
+
+<div class="class-grid">
+  <% classes.forEach(function (classItem) { %>
+    <%- include('partials/class-card', { classItem, user, showRegister: true }) %>
+  <% }); %>
+</div>
+
+<%- include('partials/footer') %>
